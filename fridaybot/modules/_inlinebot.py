@@ -12,11 +12,11 @@ from fridaybot.modules import inlinestats
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if PMPERMIT_PIC is None:
-    WARN_PIC = "https://telegra.ph/file/4828cfc7bc31852ed5571.jpg"
+    WARN_PIC = "https://telegra.ph/file/e09fb70dc8b95dd6867ea.jpg"
 else:
     WARN_PIC = PMPERMIT_PIC
 LOG_CHAT = Config.PRIVATE_GROUP_ID
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@InukaASiTH"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@ImKaviya"
 
 
 @tgbot.on(events.InlineQuery)
@@ -37,11 +37,11 @@ async def inline_handler(event):
     elif event.query.user_id == bot.uid and query == "stats":
         result = builder.article(
             title="Stats",
-            text=f"**Showing Stats For {DEFAULTUSER}'s Inukaasith** \nNote --> Only Owner Can Check This \n(C) @InukaASiTH",
+            text=f"**Showing Stats For {DEFAULTUSER}'s @ImKaviya** \nNote --> Only Owner Can Check This \n(C) @ImKaviya",
             buttons=[
                 [custom.Button.inline("Show Stats ?", data="terminator")],
-                [Button.url("Owner", "https://github.com/Inukaasith")],
-                [Button.url("Conatact ❤️", "t.me/Inukaasith")],
+                [Button.url("Owner", "https://github.com/kaviya-admin")],
+                [Button.url("Conatact ❤️", "t.me/ImKaviya")],
             ],
         )
         await event.answer([result])
@@ -111,7 +111,7 @@ async def on_plug_in_callback_query_handler(event):
     if plugin_name in CMD_HELP:
         help_string = f"**💡 PLUGIN NAME 💡 :** `{plugin_name}` \n{CMD_HELP[plugin_name]}"
     reply_pop_up_alert = help_string
-    reply_pop_up_alert += "\n\n**(C) @InukaASiTH** ".format(plugin_name)
+    reply_pop_up_alert += "\n\n**(C) @ImKaviya** ".format(plugin_name)
     if len(reply_pop_up_alert) >= 4096:
         crackexy = "`Pasting Your Help Menu.`"
         await event.answer(crackexy, cache_time=0, alert=True)
